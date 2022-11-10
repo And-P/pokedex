@@ -1,8 +1,10 @@
+//MANIPULA HTML(add <li> na <ol>)
+
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
-const maxRecords = 151
-const limit = 10
+const maxRecords = 156
+const limit = 12
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
@@ -21,6 +23,9 @@ function convertPokemonToLi(pokemon) {
     `
 }
 
+
+// BUTTON LOAD MORE CONF. 
+
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(convertPokemonToLi).join('')
@@ -32,9 +37,9 @@ loadPokemonItens(offset, limit)
 
 loadMoreButton.addEventListener('click', () => {
     offset += limit
-    const qtdRecordsWithNexPage = offset + limit
+    const qtdRecordsWithNextPage = offset + limit
 
-    if (qtdRecordsWithNexPage >= maxRecords) {
+    if (qtdRecordsWithNextPage >= maxRecords) {
         const newLimit = maxRecords - offset
         loadPokemonItens(offset, newLimit)
 
