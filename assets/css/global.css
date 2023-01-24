@@ -15,7 +15,7 @@ body {
 }
 
 
-
+/* Apresentação da Página por Tamanho  */
 @media screen and (min-width: 380px) {
     .pokemons {
         grid-template-columns: 1fr 1fr;

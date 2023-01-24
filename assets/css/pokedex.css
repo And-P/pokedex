@@ -104,9 +104,76 @@
     filter: brightness(1.6);
 }
 
+/* MODAL */
+.modalDialog {
+	position: fixed;
+	
+    top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+    color: #000;
+
+    background: rgba(0,0,0,0.4);
+	
+    z-index: 99999;
+	
+    opacity:0;
+	
+    -webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	
+    pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog .modalPokemon {
+	
+    position: relative;
+	
+    width: 400px;
+	
+    margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	
+    border-radius: 1rem;
+	
+    background: #fff;
+}
+
+.fechar {
+    position: absolute;
+
+    margin-top: 5px;
+    width: 30px;
+    right: -15px;
+    top: -20px;
+
+    text-align: center;
+    
+    
+    line-height: 30px;
+    
+    border-radius: 50%;
+    
+    font-size: 16px;
+    color: #000;
+    background: #ff4545;
+}
+
+.fechar:hover { 
+    filter: brightness(0.3);
+ }
 
 
 
+/* Colors */
 .normal {
     background-color: #a6a877;
 }
